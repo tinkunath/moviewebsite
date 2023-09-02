@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+
+ body {
+
+    background-image: url(./backimg.jpg);
+    
+    
+ }
+
+  .signup-form {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); 
+    border-radius: 5px;
+  }
+  .signup-form label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  .signup-form input[type="text"], .signup-form input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  .signup-form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+  <div class="signup-form">
+    <form id="myForm">
+      <label for="name"><b>Name:</b></label>
+      <input type="text" id="name" name="name" required>
+      <label for="email"><b>Email Address:</b></label>
+      <input type="email" id="email" name="email" required>
+      <button type="submit" id="submitBtn">Submit</button>
+    </form>
+    <p id="successMessage" style="display: none; color: rgb(245, 4, 24);">You successfully signed up. Back to the main menu</p>
+  </div>
+
+  <script>
+    const form = document.getElementById('myForm');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const name = form.name.value;
+      const email = form.email.value;
+
+      if (name && email) {
+        
+        alert('Successfully signup✅ Back to main menu');
+        form.reset();
+      }
+    });
+  </script>
+</body>
+</html>
